@@ -7,4 +7,4 @@ RUN echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) ma
 RUN apt-get update
 RUN apt-get install trivy -y
 RUN trivy -version
-
+RUN trivy image jenkins-trivy
