@@ -1,3 +1,3 @@
 FROM ubuntu
-RUN apt update
-RUN apt install python
+RUN apt-get update
+RUN apt-get install python -y
