@@ -21,12 +21,13 @@ pipeline {
                 }
             }
         }
-        stage('Docker Build'){
+        stage('Docker Image Build'){
             steps{
                 sh(script: 'docker ps -a')
+                sh(script: 'docker images -a')
                 sh(script: """
                     cd ubuntu
-                    docker build --name ubuntutest -t jenkins-pipeline-ubuntu-python .
+                    docker build -t jenkins-trivy .
                     docker images -a
                     cd ..
                 """)

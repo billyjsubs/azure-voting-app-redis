@@ -5,4 +5,3 @@ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-ke
 RUN echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | tee -a /etc/apt/sources.list.d/trivy.list
 RUN apt-get install trivy
 RUN trivy -version
-RUN trivy ubuntutest
