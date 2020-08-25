@@ -13,7 +13,7 @@ pipeline {
                 sh(script: 'docker ps -a')
                 sh(script: """
                     cd ubuntu
-                    docker build -t jenkins-pipeline .
+                    docker build -t jenkins-pipeline-ubuntu-python .
                     docker images -a
                     cd ..
                 
