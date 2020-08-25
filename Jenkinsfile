@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Removed dangling images'){
             steps{
-                sh(script: 'docker image prune -f')
+                sh(script: 'docker image prune --all -f')
             }
         }
         stage('Docker Build'){
