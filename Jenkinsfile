@@ -26,10 +26,9 @@ pipeline {
                 sh(script: 'docker ps -a')
                 sh(script: """
                     cd ubuntu
-                    docker build -t jenkins-pipeline-ubuntu-python .
+                    docker build --name ubuntutest-t jenkins-pipeline-ubuntu-python .
                     docker images -a
                     cd ..
-                
                 """)
             }
         }
