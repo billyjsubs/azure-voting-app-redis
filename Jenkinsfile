@@ -12,6 +12,14 @@ pipeline {
             steps{
                 sh(script: 'docker image prune --all -f')
             }
+            post{
+                success{
+                    echo ":) prune successful"
+                }
+                failure{
+                    echo ":( Prune failed"
+                }
+            }
         }
         stage('Docker Build'){
             steps{
