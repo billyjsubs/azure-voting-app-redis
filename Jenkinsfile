@@ -8,6 +8,11 @@ pipeline {
                 sh(script: 'echo Hello world')
             }
         }
+        stage('Removed dangling images'){
+            steps{
+                sh(script: 'docker image prune -f')
+            }
+        }
         stage('Docker Build'){
             steps{
                 sh(script: 'docker ps -a')
