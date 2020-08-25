@@ -8,5 +8,11 @@ pipeline {
                 sh(script: 'echo Hello world')
             }
         }
+        stage('Docker Build'){
+            steps{
+                sh(script: 'docker ps -a')
+            }
+
+        }
     }
 }
